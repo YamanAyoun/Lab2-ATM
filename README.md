@@ -12,4 +12,5 @@ and in the application you can't Withdraw any money if you dont have balance , a
 
 ## Visuals
 
-![image for app]()
+![1](https://github.com/YamanAyoun/Lab2-ATM/assets/111063547/974b8493-e249-4a71-840e-6cf772c325e7)
+
