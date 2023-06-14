@@ -12,5 +12,12 @@ and in the application you can't Withdraw any money if you dont have balance , a
 
 ## Visuals
 
-![1](https://github.com/YamanAyoun/Lab2-ATM/assets/111063547/974b8493-e249-4a71-840e-6cf772c325e7)
+The applictaion is start to ask you: What your opriation and here we shows char(A) to see balance.
+![iamge 1](https://github.com/YamanAyoun/Lab2-ATM/assets/111063547/974b8493-e249-4a71-840e-6cf772c325e7)
 
+When you write (C) you can add money in your balance.
+![image 2](https://github.com/YamanAyoun/Lab2-ATM/assets/111063547/3c597144-e1a9-4f1d-86e5-811df04ed392)
+When you write (B) you can Withdraw the money and the balance is change to balance = balance- Withdraw.
+![image 3](https://github.com/YamanAyoun/Lab2-ATM/assets/111063547/c82f806b-7f97-46bf-bc44-c2c5ec656f92)
+
+Last you can select option D to exit the application.
