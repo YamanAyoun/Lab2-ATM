@@ -10,39 +10,59 @@ namespace AtmTest
         {
             Program.Balance = 100;
 
+            
             decimal balance = Program.ViewBalance();
 
+            
             Assert.Equal(100, balance);
         }
 
         [Theory]
-        [InlineData(200, 200, 400)]
-
-
-        public void TestDepositOperation(decimal deposit, decimal balance, decimal BalanceAfterDeposit)
+        [InlineData(50)]
+        [InlineData(100)]
+        public void TestWithdrawOperation(decimal withdrawNumber)
         {
-            Program.Balance = balance;
+            
+            Program.Balance = 200;
+           
+            decimal newBalance = Program.Withdraw(withdrawNumber);
 
-            decimal act = Program.Deposit(deposit);
-            Assert.Equal(BalanceAfterDeposit, act);
+            Assert.Equal(200 - withdrawNumber, newBalance);
+        }
 
+        [Fact]
+        public void WithdrawThrowException()
+        {
+
+            Program.Balance = 50;
+
+            Assert.Throws<Exception>(() => Program.Withdraw(100));
         }
 
         [Theory]
-        [InlineData(500, 200, 300)]
-
-
-        public void TestWithdrawOperation(decimal balance, decimal Withdraw, decimal BalanceAfterWithdraw)
+        [InlineData(50)]
+        [InlineData(100)]
+        public void TestDepositOperation(decimal depositAmount)
         {
-            Program.Balance = balance;
 
-            decimal act = Program.Withdraw(Withdraw);
-            Assert.Equal(BalanceAfterWithdraw, act);
+            Program.Balance = 200;
 
+            decimal newBalance = Program.Deposit(depositAmount);
+
+            Assert.Equal(200 + depositAmount, newBalance);
         }
 
+        [Fact]
+        public void DepositWhenNumberZeroOrNegative()
+        {
+            Program.Balance = 200;
 
+            decimal newBalance = Program.Deposit(0);
 
+            Assert.Equal(200, newBalance);
+        }
 
-    }
+        
+    
+}
 }
