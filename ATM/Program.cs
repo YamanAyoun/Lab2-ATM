@@ -14,19 +14,21 @@
         }
         public static decimal Withdraw(decimal number)
         {
-            if (number <= 0)
+            if (Balance < number)
             {
-                Console.WriteLine("number should bigger zero!");
+                throw new Exception($"your balance just {Balance}");
+            }
+            else if (number < 0)
+            {
+                throw new Exception("you can't withDraw Zero or negative number");
             }
 
-            if (number > Balance)
-            {
-                Console.WriteLine("Your balance is less than number required");
-            }
+            
 
-            Balance = Balance - number;
+                Balance = Balance - number;
 
-            return Balance;
+                return Balance;
+            
         }
 
         public static decimal Deposit(decimal number)
