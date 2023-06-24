@@ -42,14 +42,14 @@ namespace AtmTest
         [Theory]
         [InlineData(50)]
         [InlineData(100)]
-        public void TestDepositOperation(decimal depositAmount)
+        public void TestDepositOperation(decimal deposit)
         {
 
             Program.Balance = 200;
 
-            decimal newBalance = Program.Deposit(depositAmount);
+            decimal newBalance = Program.Deposit(deposit);
 
-            Assert.Equal(200 + depositAmount, newBalance);
+            Assert.Equal(200 + deposit, newBalance);
         }
 
         [Fact]
