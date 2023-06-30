@@ -16,11 +16,15 @@
         {
             if (Balance < number)
             {
-                throw new Exception($"your balance just {Balance}");
+                //throw new Exception($"your balance just {Balance}");
+                Console.WriteLine($"your balance just {Balance}");
+                return Balance;
             }
             else if (number < 0)
             {
-                throw new Exception("you can't withDraw Zero or negative number");
+                //throw new Exception("you can't withDraw Zero or negative number");
+                Console.WriteLine("you can't withDraw Zero or negative number");
+                return Balance;
             }
 
             
@@ -39,8 +43,10 @@
                 Console.WriteLine("You should enter number bigger than zero!");
                 return Balance;
             }
-            Balance = Balance + number;
-
+            else
+            {
+                Balance = Balance + number;
+            }
             return Balance;
         }
 
